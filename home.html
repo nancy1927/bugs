@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Bugs!</title>
+
+<script language="JavaScript" type= "text/javascript">
+// set some variable and snuff the browser
+
+	function init(){
+
+        	if (document.layers) {			// for NS4 browsers
+			layerRef='document.layers["';
+			styleSwitch='"]';
+
+        	} else if (document.all) {		// for IE4+ browsers
+			layerRef='document.all["';
+			styleSwitch='"].style';
+
+        	} else if (document.getElementById) {	// for NS6 browsers
+			layerRef='document.getElementById("';
+			styleSwitch='").style';
+		} else {
+                        document.writeIn("Sorry, I can run on your Browser");
+                }
+                        
+	}
+
+//links
+var loaded = false;
+
+if (document.images) {
+spin= new Image(); spin.src="spin.gif";
+count = new Image(); count.src="count.gif";
+mouse = new Image(); mouse.src="mouse.gif";
+imageLoad();
+}
+
+function imageLoad() {
+  if (document.images) {
+    spina = new Image(); spina.src="spina.gif";
+    counta = new Image();  counta.src="counta.gif";
+    mousea = new Image(); mousea.src="mousea.gif";
+    return (loaded=true);
+  }
+}
+
+function rollOut(imgName) {
+   if (document.images) {
+       document[imgName].src=eval(imgName+".src");
+  
+   }
+}
+
+function rollIn(imgName) {
+   if (document.images) {
+      document[imgName].src=eval(imgName+"a.src");
+   }
+}
+
+
+</script>
+<style type="text/css">
+   body   {background-image:url(backgro.gif);}
+  .titleB  {position:absolute; left:255; top:120; z-index:700; font-weight:
+         bold; font-size:24pt; color:#63C6DE;}
+  .title {font-family:Arial, serif; font-size:48pt; 
+         font-weight:bold; color:218429;
+         position:absolute; left:220; top:50; z-index:600;}
+</style>
+ 
+</head>
+<body onload="init()">
+<span class="title">BUGS!
+</span>
+<span class="titleB">
+Pick a Bug Game!
+</span>
+<span>
+<table width="960" height="200">
+<tr><td>
+   <a href="home.html">
+   <img src="homegif.gif" name="home" border="0" height="80" width="80"></a>
+</td></tr>
+</span>
+<span>
+<tr><td width="960" height="80">
+</td></tr>
+<tr><td align="center" valign="bottom" width="960" height="70">
+   <a href="flycrawl5.html" onMouseover="rollIn('mouse')"; onMouseout="rollOut('mouse')";>
+   <img src="mouse.gif" name="mouse" border="0" height="60" width="175"></a>
+</td></tr>
+<tr><td align="center" valign="bottom" width="960" height="70">
+   <a href="hangbug2.html" onMouseover="rollIn('spin')"; onMouseout="rollOut('spin')";>
+   <img src="spin.gif" name="spin" border="0" height="60" width="175"></a>
+</td></tr>
+<tr><td align="center" valign="bottom" width="960" height="70">
+   <a href="countbug.html" onMouseover="rollIn('count')"; onMouseout="rollOut('count')";>
+   <img src="count.gif" name="count" border="0" height="60" width="165"></a>
+</td></tr>
+
+</table>
+</span>
+
+</body>
+</html>

@@ -1,0 +1,458 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Bugs!</title>
+
+<script language="JavaScript" type= "text/javascript">
+
+// set some variable and snuff the browser
+
+var oldLayer = "textPancake";
+	
+	function init(){
+                leftBlue=800;
+                topBlue=300;
+                leftRed=880;
+                topRed=200;
+                leftYellow=-400;
+                topYellow=100;
+        	if (document.layers) {			// for NS4 browsers
+			layerRef='document.layers["';
+			styleSwitch='"]';
+
+        	} else if (document.all) {		// for IE4+ browsers
+			layerRef='document.all["';
+			styleSwitch='"].style';
+
+        	} else if (document.getElementById) {	// for NS6 browsers
+			layerRef='document.getElementById("';
+			styleSwitch='").style';
+		} else {
+                        document.writeIn("Sorry, I can run on your Browser");
+                }
+                
+                 
+                  
+	}
+function init1(){
+        init();
+        moveLayerOne();
+}
+
+//get everything flying through on loading
+function moveLayerOne() {
+        eval(layerRef+'Blue'+styleSwitch+'.left='+leftBlue);
+        eval(layerRef+'Blue'+styleSwitch+'.top='+topBlue);
+        eval(layerRef+'Red'+styleSwitch+'.left='+leftRed);
+        eval(layerRef+'Red'+styleSwitch+'.top='+topRed);       
+        eval(layerRef+'Yellow'+styleSwitch+'.left='+leftYellow);
+        eval(layerRef+'Yellow'+styleSwitch+'.top='+topYellow);       
+
+      
+        topBlue=300;
+        leftBlue -= 80;
+        topRed=200;
+        leftRed -= 160;
+        topYellow=100;
+        leftYellow += 160;
+
+        if (leftBlue < 900 && leftRed < 900 && leftYellow < 1600) {
+           setTimeout("moveLayerOne()", 85);
+        }    
+       
+}
+//get bug crawling diagonally downward 
+
+function init2(){
+     init();
+     crawl();
+}
+
+function craw() {
+ 
+       
+        eval(layerRef+'crawl1'+styleSwitch+".visibility='visible'");
+        setTimeout('crawl()',1250); 
+}
+
+function crawl() {
+        
+               if (document.layers) {			// for NS4 browsers
+			layerRef='document.layers["';
+			styleSwitch='"]';
+
+        	} else if (document.all) {		// for IE4+ browsers
+			layerRef='document.all["';
+			styleSwitch='"].style';
+
+        	} else if (document.getElementById) {	// for NS6 browsers
+			layerRef='document.getElementById("';
+			styleSwitch='").style';
+		} else {
+                        document.writeIn("Sorry, I can run on your Browser");
+                }
+
+        eval(layerRef+'crawl1'+styleSwitch+".visibility='hidden'");
+        eval(layerRef+'crawl2'+styleSwitch+".visibility='visible'");
+        setTimeout('crawl2()',1250); 
+       
+        
+}
+function crawl2() {
+       eval(layerRef+'crawl2'+styleSwitch+".visibility='hidden'");
+       eval(layerRef+'crawl3'+styleSwitch+".visibility='visible'");
+       setTimeout('crawl3()',1500); 
+      
+}
+
+function crawl3() {
+       eval(layerRef+'crawl3'+styleSwitch+".visibility='hidden'");
+       eval(layerRef+'crawl4'+styleSwitch+".visibility='visible'");
+       setTimeout('crawl4()',1500); 
+      
+}
+
+function crawl4() {
+       eval(layerRef+'crawl4'+styleSwitch+".visibility='hidden'");
+       eval(layerRef+'crawl5'+styleSwitch+".visibility='visible'");
+       setTimeout('crawl5()',1500);
+}
+
+function crawl5() {
+       eval(layerRef+'crawl5'+styleSwitch+".visibility='hidden'");
+       eval(layerRef+'crawl6'+styleSwitch+".visibility='visible'");
+       setTimeout('crawl6()',1500);
+}
+
+
+function crawl6() {
+       eval(layerRef+'crawl6'+styleSwitch+".visibility='hidden'");
+       eval(layerRef+'crawl7'+styleSwitch+".visibility='visible'");
+       setTimeout('crawl7()',1500);
+}
+
+function crawl7() {
+       eval(layerRef+'crawl7'+styleSwitch+".visibility='hidden'");
+       eval(layerRef+'crawl8'+styleSwitch+".visibility='visible'");
+       setTimeout('crawl8()',1500);
+}
+
+function crawl8() {
+       eval(layerRef+'crawl8'+styleSwitch+".visibility='hidden'");
+       eval(layerRef+'crawl9'+styleSwitch+".visibility='visible'");
+       setTimeout('crawl9()',1500);
+}
+
+function crawl9() {
+       eval(layerRef+'crawl9'+styleSwitch+".visibility='hidden'");
+       eval(layerRef+'crawl10'+styleSwitch+".visibility='visible'");
+       setTimeout('crawl10()',1500);
+}
+
+function crawl10() {
+       eval(layerRef+'crawl10'+styleSwitch+".visibility='hidden'");
+       eval(layerRef+'crawl11'+styleSwitch+".visibility='visible'");
+       setTimeout('crawl11()',1500);
+}
+
+function crawl11() {
+       eval(layerRef+'crawl11'+styleSwitch+".visibility='hidden'");
+       eval(layerRef+'crawl12'+styleSwitch+".visibility='visible'");
+       setTimeout('crawl12()',1500);
+}
+
+function crawl12() {
+       eval(layerRef+'crawl12'+styleSwitch+".visibility='hidden'");
+}
+//get bird swoping through corner
+
+function init4(){
+     init();
+     fly();
+}
+
+function fly() {
+       eval(layerRef+'fly1'+styleSwitch+".visibility='hidden'");
+       eval(layerRef+'fly2'+styleSwitch+".visibility='visible'");
+       setTimeout('fly1()', 80);
+}
+
+function fly1() {
+       eval(layerRef+'fly2'+styleSwitch+".visibility='hidden'");
+       eval(layerRef+'fly3'+styleSwitch+".visibility='visible'");
+       setTimeout('fly2()', 80);
+}
+
+function fly2() {
+       eval(layerRef+'fly3'+styleSwitch+".visibility='hidden'");
+       eval(layerRef+'fly4'+styleSwitch+".visibility='visible'");
+       setTimeout('fly3()', 80);
+}
+
+function fly3() {
+       eval(layerRef+'fly4'+styleSwitch+".visibility='hidden'");
+       eval(layerRef+'fly5'+styleSwitch+".visibility='visible'");
+       setTimeout('fly4()', 80);
+}
+
+function fly4() {
+       eval(layerRef+'fly5'+styleSwitch+".visibility='hidden'");
+       eval(layerRef+'fly6'+styleSwitch+".visibility='visible'");
+       setTimeout('fly5()', 80);
+}
+
+function fly5() {
+       eval(layerRef+'fly6'+styleSwitch+".visibility='hidden'");
+       eval(layerRef+'fly7'+styleSwitch+".visibility='visible'");
+       setTimeout('fly6()', 80);
+}
+
+function fly6() {
+       eval(layerRef+'fly7'+styleSwitch+".visibility='hidden'");
+       eval(layerRef+'fly8'+styleSwitch+".visibility='visible'");
+       setTimeout('fly7()', 80);
+}
+
+function fly7() {
+       eval(layerRef+'fly8'+styleSwitch+".visibility='hidden'");
+      
+}
+//hide and show poems from radio buttons
+function switchPoems(layerName){
+        
+			hideLayer(oldLayer);
+			showLayer(layerName);
+                        oldLayer = layerName;
+                        
+	}
+	function showLayer(layerName){
+		eval(layerRef+layerName+styleSwitch+'.visibility="visible"');
+	}
+	
+	function hideLayer(layerName){
+		eval(layerRef+layerName+styleSwitch+'.visibility="hidden"');
+	}
+
+//get fly buzzing in corner
+
+function init3(){
+     init();
+     flyDrunkBug();
+}
+
+function flyDrunkBug() {
+       eval(layerRef+'drunkBug'+styleSwitch+'.top="395"');
+       eval(layerRef+'drunkBug'+styleSwitch+'.left="35"');
+      
+       setTimeout('flyDrunkBug1()',1000);
+}
+
+function flyDrunkBug1() {
+      
+       eval(layerRef+'drunkBug'+styleSwitch+'.top="365"');
+       eval(layerRef+'drunkBug'+styleSwitch+'.left="25"');
+      
+       setTimeout('flyDrunkBug2()',1000);
+}
+
+function flyDrunkBug2() {
+      
+       eval(layerRef+'drunkBug'+styleSwitch+'.top="305"');
+       eval(layerRef+'drunkBug'+styleSwitch+'.left="145"');      
+ 
+       setTimeout('flyDrunkBug3()',1000);
+}
+
+function flyDrunkBug3() {
+      
+
+       eval(layerRef+'drunkBug'+styleSwitch+'.top="265"');
+       eval(layerRef+'drunkBug'+styleSwitch+'.left="65"');            
+       
+       setTimeout('flyDrunkBug4()',1000);
+}
+
+function flyDrunkBug4() {
+      
+       eval(layerRef+'drunkBug'+styleSwitch+'.top="205"');
+       eval(layerRef+'drunkBug'+styleSwitch+'.left="155"');  
+      
+
+}
+
+</script>
+<style type="text/css">
+.posform  {position:absolute; left:70; top:120; z-index:500}
+.titleE  {position:absolute; left:70; top:135; color:#D6EF39;
+             font-size:18pt; font-weight:bold; z-index:1200;}
+.titleB  {position:absolute; left:150; top:65; z-index:1100; font-weight:
+         bold; font-size:28pt; color:63C6DE;}
+.title {font-family:Arial, serif; font-size:48pt; 
+         font-weight:bold; color:218429;
+         position:absolute; left:50; top:50; z-index:1000;}
+.titleD  {position:absolute; left:280; top:200; color:#632910;
+         font-family:Arial, serif; font-size:12pt; font-weight:bold; z-index:1200;}
+.blue {position:absolute;  top:300; left:800; color:blue; z-index:100;}
+.red {position:absolute;  top:200; left:880; color:blue; z-index:200;}
+.yellow {position:absolute;  top:100; left:-400; color:blue; z-index:55;}
+.text {font-family: Arial, serif; font-weight:bold; font-size:18pt; color:#AD9410;
+      position:absolute; left:280; top:170; z-index:1200;}
+.crawlA {position:absolute; left:10; top:75; z-index:400;}
+.crawlB {position:absolute; left:70; top:45; z-index:400;}
+.crawlC {position:absolute; left:180; top:105; z-index:400;}
+.crawlD {position:absolute; left:230; top:175; z-index:400;}
+.crawlE {position:absolute; left:300; top:205; z-index:400;}
+.crawlF {position:absolute; left:440; top:340; z-index:400;}
+.crawlG {position:absolute; left:500; top:360; z-index:400;}
+.crawlH {position:absolute; left:550; top:380; z-index:400;}
+.crawlI {position:absolute; left:600; top:400; z-index:400;}
+.crawlJ {position:absolute; left:650; top:430; z-index:400;}
+.crawlK {position:absolute; left:650; top:490; z-index:400;}
+.crawlL {position:absolute; left:650; top:575; z-index:400;}
+.fly    {position:absolute; left:250; top:-200; z-index:300;}
+.flyA   {position:absolute; left:250; top:-31; z-index:300;}
+.flyB   {position:absolute; left:290; top:60; z-index:300;}
+.flyC   {position:absolute; left:410; top:120; z-index:300;}
+.flyD   {position:absolute; left:550; top:160; z-index:300;}
+.flyE   {position:absolute; left:640; top:200; z-index:300;}
+.flyF   {position:absolute; left:840; top:200; z-index:300;}
+.flyG   {position:absolute; left:940; top:200; z-index:300;}
+.flowerA   {position:absolute; left:620; top:320; z-index:50;}
+.flowerB   {position:absolute; left:570; top:90; z-index:50;}
+.flowerC   {position:absolute; left:160; top:150; z-index:50;}
+.drunkBugA {position:absolute; left:200; top:465; z-index:60;}
+body {background-color:;}
+</style>
+</head>
+<body onLoad="init1()">
+  <span class="title">BUGS!
+  </span>
+  <span class="titleB">
+  Mouse About as you Read!
+
+
+  
+
+  </span>
+  <span class="titleE">
+  Pop a Button to Pick a Poem!
+  </span>
+  <span><tr><td>
+   <a href="home.html">
+   <img src="homegif.gif" name="home" border="0" height="80" width="80"></a>
+  </td></tr>
+  </span>
+  <span id="Blue" class="blue" style="visibility:visible;"><img src="blue.gif" height="80" width="80">
+  </span>
+  <span id="Red" class="red" style="visibility:visible;"><img src="red.gif" height="50" width="50">
+  </span>
+  <span id="Yellow" class="yellow" style="visibility:visible;"><img src="yellow.gif" height="180" width="180">
+  </span>
+  <span id= "crawl1" class="crawlA" style="visibility:hidden;"><img src="crawl1.gif" height="50' width="50">
+  </span>
+  <span id="crawl2" class="crawlB" style="visibility:hidden;"><img src="crawl2.gif" height="50' width="50">
+  </span>
+  <span id="crawl3" class="crawlC" style="visibility:hidden;"><img src="crawl3.gif" height="50' width="50">
+  </span>
+  <span id="crawl4" class="crawlD" style="visibility:hidden;"><img src="crawl4.gif" height="50' width="50">
+  </span>
+  <span id="crawl5" class="crawlE" style="visibility:hidden;"><img src="crawl2.gif" height="50' width="50">
+  </span>
+  <span id="crawl6"class="crawlF" style="visibility:hidden;"><img src="crawl6.gif" height="50' width="50">
+  </span>
+  <span id="crawl7" class="crawlG" style="visibility:hidden;"><img src="crawl1.gif" height="50' width="50">
+  </span>
+  <span id="crawl8" class="crawlH" style="visibility:hidden;"><img src="crawl2.gif" height="50' width="50">
+  </span>
+  <span id="crawl9" class="crawlI" style="visibility:hidden;"><img src="crawl2.gif" height="50' width="50">
+  </span>
+  <span id="crawl10" class="crawlJ" style="visibility:hidden;"><img src="crawl4.gif" height="50' width="50">
+  </span>
+  <span id="crawl11" class="crawlK" style="visibility:hidden;"><img src="crawl4.gif" height="50' width="50">
+  </span>
+  <span id="crawl12" class="crawlL" style="visibility:hidden;"><img src="crawl4.gif" height="50' width="50">
+  </span>
+  <span id="fly1" class="fly"><img src="fly1.gif" height="90" width="140">
+  </span>
+  <span id="fly2" class="flyA" style="visibility:hidden;"><img src="fly1.gif" height="90" width="140">
+  </span>
+  <span id="fly3" class="flyB" style="visibility:hidden;"><img src="fly2.gif" height="90" width="140">
+  </span>
+  <span id="fly4" class="flyC" style="visibility:hidden;"><img src="fly3.gif" height="100" width="120">
+  </span>
+  <span id="fly5" class="flyD" style="visibility:hidden;"><img src="fly4.gif" height="110" width="120">
+  </span>
+  <span id="fly6" class="flyE" style="visibility:hidden;"><img src="fly5.gif" height="110" width="120">
+  </span>
+  <span id="fly7" class="flyF" style="visibility:hidden;"><img src="fly5.gif" height="110" width="120">
+  </span>
+  <span id="fly8" class="flyG" style="visibility:hidden;"><img src="fly5.gif" height="110" width="120">
+  </span>
+  <span class="flowerA"><a href="#" onMouseover="setTimeout('init2()',500);">
+  <img src="flower1.gif" name="flower1" border="0" height="120" width="100"></a>
+  </span>
+  <span class="flowerC"><a href="#" onMouseover="setTimeout('init3()',500);">
+  <img src="flower1.gif" name="flower1" border="0" height="120" width="100"></a>
+  </span>
+  <span class="flowerB"><a href="#" onMouseover="setTimeout('init4()',500);">
+  <img src="flower1.gif" name="flower1" border="0" height="120" width="100"></a>
+  </span>
+  <span id="drunkBug" class="drunkBugA" style="visibility:visible;">
+  <img src="drunkbug.gif" height="40" width="40">
+  </span>
+  <span class="posform">
+  <form>
+    <input type="radio" name="poem" value="" onClick="switchPoems('textPancake');"/>
+    <input type="radio" name="poem" value="" onClick="switchPoems('textBoxes');"  />
+    <input type="radio" name="poem" value="" onClick="switchPoems('textBird');" />
+    <input type="radio" name="poem" value="" onClick="switchPoems('textThought');" />
+    <input type="radio" name="poem" value="" onClick="switchPoems('textRise');"/ >
+    <input type="radio" name="poem" value="" onClick="switchPoems('textInvesion');" />
+  </form>
+</span>
+
+<span id="textPancake" class="titleD" style="visibility:hidden">
+Pancake<br /><br />Who wants a pancake,<br />Sweet and piping hot?<br />
+Good little Grace looks up and says,<br />"I'll take the one on top."<br />
+Who else wants pancake,<br />Fresh off the griddle?<br />
+Terrible Theresa smiles and says,<br />"I'll take the one in the middle."
+</span>
+
+<span id="textBoxes" class="titleD" style="visibility:hidden">
+Boxes<br /><br />Two boxes met on the road. Said one to the other,<br /> 
+"If your a box, And I'm a box,<br />Then you must be my brother.<br />
+Our sides are thin, We're cavin' in,<br />And we must not get thiner."<br />
+And so the two boxes hand in hand,<br />Went home to have their dinner. 
+</span>
+
+<span id="textBird" class="titleD" style="visibility:hidden">
+Early Bird<br /><br />Oh, if your an early bird,<br />
+And you catch the worm for your breakfast plate,<br />
+If your a bird, Be an early bird--<br />
+But if your a worm, sleep late!
+</span>
+
+<span id="textThought" class="titleD" style="visibility:hidden"12 >
+Happy Thought<br /><br />"The world is so full of a number of things,<br />
+ I'm sure we should be as happy as kings."
+</span>
+
+<span id="textRise" class="titleD" style="visibility:hidden">
+Time To Rise<br /><br />A birdie with a yellow bill<br />
+Hoped ont he window sill,<br />Cocked his shining eye and said:<br />
+"Ain't you shamed you sleepy head!"
+</span>
+
+<span id="textInvesion" class="titleD" style="visibility:hidden">
+Invension<br /><br />I've done it, I've done it! 
+Guess what I've done!<br />Invented a light that plugs into the sun.<br />
+The sun is bright enough,<br />The bulb is strong enough,<br />
+But, oh, there is only one thing wrong...<br />
+The cord ain't long enough.
+</span>
+
+<span id="text" class="titleD" style="visibility:visible">
+</span>
+</body>
+</html>
+

@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Bugs!</title>
+
+<script language="JavaScript" type= "text/javascript">
+
+// set some variable and snuff the browser
+
+        i=0;
+	var oldLayer = "bug12";
+        var oldLayer1 = "nonum";
+        var oldLayer2 = "text";
+	function init(){
+
+        	if (document.layers) {			// for NS4 browsers
+			layerRef='document.layers["';
+			styleSwitch='"]';
+
+        	} else if (document.all) {		// for IE4+ browsers
+			layerRef='document.all["';
+			styleSwitch='"].style';
+
+        	} else if (document.getElementById) {	// for NS6 browsers
+			layerRef='document.getElementById("';
+			styleSwitch='").style';
+		} else {
+                        document.writeIn("Sorry, I can run on your Browser");
+                }
+                hangbug();      
+	}
+
+
+//detemine if right leter is checked in box,show right script
+ 
+function check(caterpiler) {
+        
+        if (caterpiler.letterset[0].checked) {
+        eval(layerRef+'letter1'+styleSwitch+".visibility='visible'");
+        eval(layerRef+'tryAgain1'+styleSwitch+".visibility='hidden'");
+        
+        }
+        else  {
+        
+        eval(layerRef+'tryAgain1'+styleSwitch+".visibility='visible'");
+        eval(layerRef+'letter1'+styleSwitch+".visibility='hidden'");
+        eval(layerRef+'tryAgain'+styleSwitch+".visibility='hidden'");
+        }
+}
+
+function check1(caterpiler) {
+        
+        if (caterpiler.letterset[19].checked) {
+        eval(layerRef+'letter2'+styleSwitch+".visibility='visible'");
+        eval(layerRef+'tryAgain1'+styleSwitch+".visibility='hidden'"); 
+       
+        }
+        else  {
+        
+        eval(layerRef+'tryAgain1'+styleSwitch+".visibility='visible'");
+        eval(layerRef+'letter2'+styleSwitch+".visibility='hidden'");
+        eval(layerRef+'tryAgain'+styleSwitch+".visibility='hidden'");
+        }
+}
+
+function check2(caterpiler) {
+        
+        if (caterpiler.letterset[4].checked) {
+        eval(layerRef+'letter3'+styleSwitch+".visibility='visible'");
+        eval(layerRef+'tryAgain1'+styleSwitch+".visibility='hidden'");
+       
+        }
+        else  {
+        
+        eval(layerRef+'tryAgain1'+styleSwitch+".visibility='visible'");
+        eval(layerRef+'letter3'+styleSwitch+".visibility='hidden'");
+        eval(layerRef+'tryAgain'+styleSwitch+".visibility='hidden'");
+        }
+}
+
+function check3(caterpiler) {
+        
+        if (caterpiler.letterset[17].checked) {
+        eval(layerRef+'letter4'+styleSwitch+".visibility='visible'");
+        eval(layerRef+'letter7'+styleSwitch+".visibility='visible'");
+        eval(layerRef+'tryAgain1'+styleSwitch+".visibility='hidden'");
+        
+        }
+        else  {
+        
+        eval(layerRef+'tryAgain1'+styleSwitch+".visibility='visible'");
+        eval(layerRef+'letter4'+styleSwitch+".visibility='hidden'");
+        eval(layerRef+'letter7'+styleSwitch+".visibility='hidden'");
+        eval(layerRef+'tryAgain'+styleSwitch+".visibility='hidden'");
+        }
+}
+
+function check4(caterpiler) {
+        
+        if (caterpiler.letterset[8].checked) {
+        eval(layerRef+'letter5'+styleSwitch+".visibility='visible'");
+        eval(layerRef+'tryAgain1'+styleSwitch+".visibility='hidden'");
+        
+        }
+        else  {
+        
+        eval(layerRef+'tryAgain1'+styleSwitch+".visibility='visible'");
+        eval(layerRef+'letter5'+styleSwitch+".visibility='hidden'");
+        eval(layerRef+'tryAgain'+styleSwitch+".visibility='hidden'");
+        }
+}
+
+function check5(caterpiler) {
+        
+        if (caterpiler.letterset[11].checked) {
+        eval(layerRef+'letter6'+styleSwitch+".visibility='visible'");
+        eval(layerRef+'tryAgain1'+styleSwitch+".visibility='hidden'");
+         
+        }
+        else  {
+        
+        eval(layerRef+'tryAgain1'+styleSwitch+".visibility='visible'");
+        eval(layerRef+'letter6'+styleSwitch+".visibility='hidden'");
+        eval(layerRef+'tryAgain'+styleSwitch+".visibility='hidden'");
+        }
+}
+
+function check6(caterpiler) {
+        
+        if (caterpiler.letterset[1].checked || caterpiler.letterset[2].checked
+          || caterpiler.letterset[3].checked || caterpiler.letterset[5].checked 
+          || caterpiler.letterset[6].checked || caterpiler.letterset[7].checked
+          || caterpiler.letterset[9].checked || caterpiler.letterset[10].checked
+          || caterpiler.letterset[12].checked || caterpiler.letterset[13].checked
+          || caterpiler.letterset[14].checked || caterpiler.letterset[15].checked
+          || caterpiler.letterset[16].checked || caterpiler.letterset[20].checked
+          || caterpiler.letterset[21].checked || caterpiler.letterset[22].checked
+          || caterpiler.letterset[23].checked || caterpiler.letterset[24].checked
+          || caterpiler.letterset[25].checked || caterpiler.letterset[18].checked)  {
+        eval(layerRef+'tryAgain'+styleSwitch+".visibility='visible'");
+        eval(layerRef+'tryAgain1'+styleSwitch+".visibility='hidden'");
+         
+        }
+        else  {
+        
+        eval(layerRef+'tryAgain'+styleSwitch+".visibility='hidden'");
+        
+        }
+}
+
+function reset() {
+eval(layerRef+'tryAgain'+styleSwitch+".visibility='hidden'");
+eval(layerRef+'letter1'+styleSwitch+".visibility='hidden'");
+eval(layerRef+'letter2'+styleSwitch+".visibility='hidden'");
+eval(layerRef+'letter3'+styleSwitch+".visibility='hidden'");
+eval(layerRef+'letter3'+styleSwitch+".visibility='hidden'");
+eval(layerRef+'letter4'+styleSwitch+".visibility='hidden'");
+eval(layerRef+'letter5'+styleSwitch+".visibility='hidden'");
+eval(layerRef+'letter6'+styleSwitch+".visibility='hidden'");
+eval(layerRef+'letter7'+styleSwitch+".visibility='hidden'");
+}
+
+
+//spin the bug on entry in right checkbox
+
+function hangbug() {
+       eval(layerRef+'hangbugA'+styleSwitch+".visibility='hidden'");
+       eval(layerRef+'hangbugB'+styleSwitch+".visibility='visible'");
+       setTimeout('hangbug1()',600);
+}
+
+function hangbug1() {
+       eval(layerRef+'hangbugB'+styleSwitch+".visibility='hidden'");
+       eval(layerRef+'hangbugC'+styleSwitch+".visibility='visible'");
+       setTimeout('hangbug2()',600);
+}
+
+function hangbug2() {
+       eval(layerRef+'hangbugC'+styleSwitch+".visibility='hidden'");
+       eval(layerRef+'hangbugD'+styleSwitch+".visibility='visible'");
+       setTimeout('hangbug3()',600);
+}
+
+function hangbug3() {
+       eval(layerRef+'hangbugD'+styleSwitch+".visibility='hidden'");
+       eval(layerRef+'hangbugA'+styleSwitch+".visibility='visible'");
+       
+}
+
+
+
+
+
+</script>
+<style type="text/css">
+
+  .posword {position:absolute; left:85; top:310; z-index:140} 
+  .posform {position:absolute; left:70; top:175; z-index:500}
+  .titleB  {position:absolute; left:180; top:67; z-index:700; font-weight:
+           bold; font-size:26pt; color:#63C6DE;}
+  .title   {font-family:Arial, serif; font-size:48pt; 
+           font-weight:bold; color:#218429;
+           position:absolute; left:50; top:50; z-index:600;}
+  .titleE  {position:absolute; left:90; top:120; color:#D6EF39;
+           font-size:18pt; font-weight:bold; z-index:1200;}
+  .hangbug {position:absolute; left:500; top:130; z-index:50;}
+  .letterA  {position:absolute; left:120; top:309; color:#63C6D3;
+           font-size:35pt; font-weight:bold; z-index:150;}
+  .letterT  {position:absolute; left:176; top:309; color:#63C6D3;
+           font-size:35pt; font-weight:bold; z-index:160;}
+  .letterE  {position:absolute; left:223; top:309; color:#63C6D3;
+           font-size:35pt; font-weight:bold; z-index:170;}
+  .letterR  {position:absolute; left:270; top:309; color:#63C6D3;
+           font-size:35pt; font-weight:bold; z-index:180;}
+  .letterI  {position:absolute; left:356; top:309; color:#63C6D3;
+           font-size:35pt; font-weight:bold; z-index:190;}
+  .letterL  {position:absolute; left:412; top:309; color:#63C6D3;
+           font-size:35pt; font-weight:bold; z-index:200;}
+  .letterX  {position:absolute; left:505; top:309; color:#63C6D3;
+           font-size:35pt; font-weight:bold; z-index:210;}
+  .tryAgainA  {position:absolute; left:70; top:277; color:green;
+           font-size:16pt; font-weight:bold; z-index:140;}
+  .tryAgainB  {position:absolute; left:70; top:277; color:orange;
+           font-size:16pt; font-weight:bold; z-index:140;}
+</style>
+ 
+</head>
+<body onload="init()">
+<span class="title">BUGS!
+</span>
+<span class="titleB">
+Spell the Bug Name!
+</span>
+<span class="titleE">
+Guess a Right Letter and the Bug Spins!
+</span>
+<span>
+<table width="750" height="50">
+  <tr><td>
+  <a href="home.html">
+  <img src="homegif.gif" name="home" border="0" height="80" width="80"></a>
+  </td></tr>
+</table>
+<span class="hangbug" id="hangbugA" style="visibility:visible">
+  <img src="hangbug1.gif" alt=""
+  name="placeholder" border="0" height="250" width="250">
+</span>
+<span class="hangbug" id="hangbugB" style="visibility:hidden">
+  <img src="hangbug3.gif" alt=""
+  name="placeholder" border="0" height="250" width="250">
+</span>
+<span class="hangbug" id="hangbugC" style="visibility:hidden">
+  <img src="hangbug5.gif" alt=""
+  name="placeholder" border="0" height="250" width="250">
+</span>
+<span class="hangbug" id="hangbugD" style="visibility:hidden">
+  <img src="hangbug7.gif" alt=""
+  name="placeholder" border="0" height="250" width="250">
+</span>
+<span class="posform">
+  <form name="caterplier">
+    <input type="checkbox" name="letterset" value="c" onClick="check(this.form)" onfocus="hangbug();">A
+    <input type="checkbox" name="letterset" value="c" onClick="check6(this.form)">B
+    <input type="checkbox" name="letterset" value="c" onClick="check6(this.form)">C
+    <input type="checkbox" name="letterset" value="c" onClick="check6(this.form)">D
+    <input type="checkbox" name="letterset" value="c" onClick="check2(this.form)" onfocus="hangbug();">E
+    <input type="checkbox" name="letterset" value="c" onClick="check6(this.form)">F
+    <input type="checkbox" name="letterset" value="c" onClick="check6(this.form)">G
+    <input type="checkbox" name="letterset" value="c" onClick="check6(this.form)">H
+    <input type="checkbox" name="letterset" value="c" onClick="check4(this.form)" onfocus="hangbug();">I
+    <input type="checkbox" name="letterset" value="c" onClick="check6(this.form)">J
+    <input type="checkbox" name="letterset" value="c" onClick="check6(this.form)">K
+    <input type="checkbox" name="letterset" value="c" onClick="check5(this.form)" onfocus="hangbug();">L
+    <input type="checkbox" name="letterset" value="c" onClick="check6(this.form)">M<br />
+    <input type="checkbox" name="letterset" value="c" onClick="check6(this.form)">N
+    <input type="checkbox" name="letterset" value="c" onClick="check6(this.form)">O
+    <input type="checkbox" name="letterset" value="c" onClick="check6(this.form)">P
+    <input type="checkbox" name="letterset" value="c" onClick="check6(this.form)">Q
+    <input type="checkbox" name="letterset" value="c" onClick="check3(this.form)" onfocus="hangbug();">R
+    <input type="checkbox" name="letterset" value="c" onClick="check6(this.form)">S
+    <input type="checkbox" name="letterset" value="c" onClick="check1(this.form)" onfocus="hangbug();">T
+    <input type="checkbox" name="letterset" value="c" onClick="check6(this.form)">U
+    <input type="checkbox" name="letterset" value="c" onClick="check6(this.form)">V
+    <input type="checkbox" name="letterset" value="c" onClick="check6(this.form)">W
+    <input type="checkbox" name="letterset" value="c" onClick="check6(this.form)">X
+    <input type="checkbox" name="letterset" value="c" onClick="check6(this.form)">Y
+    <input type="checkbox" name="letterset" value="c" onClick="check6(this.form)">Z<br />
+    <input type="submit" name="resetset" value="START AGAIN" onClick="reset()">
+   </form>
+</span>
+<span id="tryAgain" class="tryagainA" style="visibility:hidden;">
+Sorry. Please cancel that letter and try again!
+</span>
+<span id="tryAgain1" class="tryagainB" style="visibility:hidden;">
+Opps, that letter was right. Check it again!
+</span>
+<span id="word" class="posword" style="visibility:visible;">
+<img src="word.gif" height="60" width="450">
+</span>
+<span id="letter1" class="letterA" style="visibility:hidden;">a
+</span>
+<span id="letter2" class="letterT" style="visibility:hidden;">t
+</span>
+<span id="letter3" class="letterE" style="visibility:hidden;">e
+</span>
+<span id="letter4" class="letterR" style="visibility:hidden;">r
+</span>
+<span id="letter5" class="letterI" style="visibility:hidden;">i
+</span>
+<span id="letter6" class="letterL" style="visibility:hidden;">l
+</span>
+<span id="letter7" class="letterX" style="visibility:hidden;">r
+</span>
+</body>
+</html>

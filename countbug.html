@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Bugs!</title>
+
+<script language="JavaScript" type= "text/javascript">
+
+// set some variable and snuff the browser
+
+	var oldLayer = "bug12";
+        var oldLayer1 = "nonum";
+        var oldLayer2 = "text";
+	function init(){
+
+        	if (document.layers) {			// for NS4 browsers
+			layerRef='document.layers["';
+			styleSwitch='"]';
+
+        	} else if (document.all) {		// for IE4+ browsers
+			layerRef='document.all["';
+			styleSwitch='"].style';
+
+        	} else if (document.getElementById) {	// for NS6 browsers
+			layerRef='document.getElementById("';
+			styleSwitch='").style';
+		} else {
+                        document.writeIn("Sorry, I can run on your Browser");
+                }
+                        
+	}
+
+//
+
+
+
+//get those bugs switching
+	function switchbugs(layerName){
+        init();
+			hideLayer(oldLayer);
+			showLayer(layerName);
+                        hideLayer1(oldLayer1);
+                        hideLayer2(oldLayer2);
+			oldLayer = layerName;
+	}
+	function showLayer(layerName){
+		eval(layerRef+layerName+styleSwitch+'.visibility="visible"');
+	}
+	
+	function hideLayer(layerName){
+		eval(layerRef+layerName+styleSwitch+'.visibility="hidden"');
+	}
+
+//get those numnber switching
+        function switchnums(layerName1){
+			hideLayer1(oldLayer1);
+			showLayer1(layerName1);
+			oldLayer1 = layerName1;
+                        
+	}
+	function showLayer1(layerName1){
+		eval(layerRef+layerName1+styleSwitch+'.visibility="visible"');
+	}
+	
+	function hideLayer1(layerName1){
+		eval(layerRef+layerName1+styleSwitch+'.visibility="hidden"');
+	}
+
+//get the text and trivial rmarks coming in (ME only use onselect)
+       function switchtexts(layerName2){
+			hideLayer2(oldLayer2);
+			showLayer2(layerName2);
+			oldLayer2 = layerName2;
+                        
+	}
+
+        function showLayer2(layerName2){
+		eval(layerRef+layerName2+styleSwitch+'.visibility="visible"');
+	}
+	
+	function hideLayer2(layerName2){
+		eval(layerRef+layerName2+styleSwitch+'.visibility="hidden"');
+	}
+
+</script>
+<style type="text/css">
+  .posimage  {position:absolute; left:125; z-index:400;}
+  .posform  {position:absolute; left:70; top:120; z-index:500}
+  .titleB  {position:absolute; left:150; top:70; z-index:700; font-weight:
+         bold; font-size:24pt; color:63C6DE;}
+  .title {font-family:Arial, serif; font-size:48pt; 
+         font-weight:bold; color:218429;
+         position:absolute; left:50; top:50; z-index:600;}
+  .titleC  {position:absolute; left:120; top:170; color:#FF3118; font-family:
+            Arial, serif; font-size:180pt; font-weight:bold; z-index:800;}
+  .titleD  {position:absolute; left:320; top:270; color:#D6EF39; font-family:
+            Arial, serif; font-size:30pt; font-weight:bold; z-index:1000;}
+  .titleE  {position:absolute; left:70; top:150; color:#D6EF39;
+             font-size:18pt; font-weight:bold; z-index:1200;}
+</style>
+ 
+</head>
+<body onload="init()">
+<span class="title">BUGS!
+</span>
+<span class="titleB">
+Pop in a Box and Count the Bugs!
+</span>
+<span class="titleE">
+Pop out and Check your Count!
+</span>
+<span><tr><td>
+   <a href="home.html">
+   <img src="homegif.gif" name="home" border="0" height="80" width="80"></a>
+</td></tr>
+</span>
+<span id="nonum" class="titleC">
+</span>
+<span id="num12" class="titleC" style="visibility:hidden">12
+</span>
+<span id="num9" class="titleC" style="visibility:hidden">9
+</span>
+<span id="num6" class="titleC" style="visibility:hidden">6
+</span>
+<span id="num3" class="titleC" style="visibility:hidden">3
+</span>
+<span id="num4" class="titleC" style="visibility:hidden">4
+</span>
+<span id="text4" class="titleD" style="visibility:hidden">4 BUGS AND 16 WINGS
+</span>
+<span id="text6" class="titleD" style="visibility:hidden">6 BUGS and 34 CHECKS 
+</span>
+<span id="text9" class="titleD" style="visibility:hidden">9 BUGS AND 60 SPOTS
+</span>
+<span id="text12" class="titleD" style="visibility:hidden"12 >12 BUGS and 96 LEGS
+</span>
+<span id="text3" class="titleD" style="visibility:hidden">2 BUGS AND ONE STRANGE BUG
+</span>
+<span id="text" class="titleD" style="visibility:visible">
+</span>
+<span id="bug12" class="posimage">
+  <img src="bug12.gif" height="770" width="600" />
+</span>
+<span id="bug9" class="posimage" style="visibility:hidden">
+  <img  src="bug9.gif" height="770" width="600" />
+</span>
+<span id="bug6" class="posimage" style="visibility:hidden">
+  <img  src="bug6.gif" height="770" width="600" />
+</span>
+<span id="bug3" class="posimage" style="visibility:hidden">
+  <img  src="bug3.gif" height="770" width="600" />
+</span>
+<span id="bug4" class="posimage" style="visibility:hidden">
+  <img  src="bug4.gif" height="770" width="600" />
+</span>
+<span class="posform">
+  <form>
+    <input type="text" name="six" size="2" maxlength="2" value="0" 
+    onFocus=switchbugs('bug6'); onBlur=switchnums('num6'); 
+    onChange=switchtexts('text6'); />
+    <input type="text" name="three" size="2" maxlength='2' value="0")
+     onFocus=switchbugs('bug3'); onBlur=switchnums('num3'); 
+    onChange=switchtexts('text3'); />
+    <input type="text" name="twelve" size="2" maxlength="2" value="0"
+    onFocus=switchbugs('bug12'); onBlur=switchnums('num12'); 
+    onChange=switchtexts('text12'); />
+    <input type="text" name="four" size="2" maxlength="2" value="0" 
+    onFocus=switchbugs('bug4'); onBlur=switchnums('num4'); 
+    onChange=switchtexts('text4'); />
+    <input type="text" name="nine" size="2" maxlength="2" value="0" 
+    onFocus=switchbugs('bug9'); onBlur=switchnums('num9'); 
+    onChange=switchtexts('text9'); />
+  </form>
+</span>
+
+    
+</body>
+</html>
